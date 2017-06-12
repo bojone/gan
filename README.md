@@ -1,6 +1,7 @@
 # gan
 
-some demo of GAMs
+some demo of GANs
+
 http://kexue.fm/archives/4439/
 
 
