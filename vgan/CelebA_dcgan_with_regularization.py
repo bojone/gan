@@ -17,7 +17,7 @@ lr = 0.0002
 z_dim = 100
 gpu_id = 3
 
-''' data '''
+""" data """
 # you should prepare your own data in ./data/img_align_celeba
 # celeba original size is [218, 178, 3]
 
@@ -35,11 +35,11 @@ data_pool = utils.DiskImageData(img_paths, batch_size, shape=[218, 178, 3], prep
 
 """ graphs """
 with tf.device('/gpu:%d' % gpu_id):
-    ''' models '''
+    """ models """
     generator = models.generator
     discriminator = models.discriminator
 
-    ''' graph '''
+    """ graph """
     # inputs
     real = tf.placeholder(tf.float32, shape=[None, 64, 64, 3])
     z = tf.placeholder(tf.float32, shape=[None, z_dim])
@@ -72,7 +72,7 @@ with tf.device('/gpu:%d' % gpu_id):
 
 
 """ train """
-''' init '''
+""" init """
 # session
 sess = utils.session()
 # iteration counter
@@ -82,13 +82,13 @@ saver = tf.train.Saver(max_to_keep=5)
 # summary writer
 summary_writer = tf.summary.FileWriter('./summaries/celeba_dcgan', sess.graph)
 
-''' initialization '''
+""" initialization """
 ckpt_dir = './checkpoints/celeba_dcgan'
 utils.mkdir(ckpt_dir + '/')
 if not utils.load_checkpoint(ckpt_dir, sess):
     sess.run(tf.global_variables_initializer())
 
-''' train '''
+""" train """
 try:
     z_ipt_sample = np.random.normal(size=[100, z_dim])
 
