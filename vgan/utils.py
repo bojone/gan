@@ -4,7 +4,6 @@ from __future__ import absolute_import
 
 import os
 import re
-import scipy
 import numpy as np
 import tensorflow as tf
 import imageio
