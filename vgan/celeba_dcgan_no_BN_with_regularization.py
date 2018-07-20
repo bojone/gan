@@ -85,7 +85,7 @@ saver = tf.train.Saver(max_to_keep=5)
 summary_writer = tf.summary.FileWriter('./summaries/celeba_dcgan_no_bn_regular', sess.graph)
 
 """ initialization """
-ckpt_dir = './checkpoints/celeba_dcgan'
+ckpt_dir = './checkpoints/celeba_dcgan_no_bn_regular'
 utils.mkdir(ckpt_dir + '/')
 if not utils.load_checkpoint(ckpt_dir, sess):
     sess.run(tf.global_variables_initializer())
@@ -139,7 +139,7 @@ try:
         if (it + 1) % 100 == 0:
             f_sample_opt = sess.run(f_sample, feed_dict={z: z_ipt_sample})
 
-            save_dir = './sample_images_while_training/celeba_dcgan'
+            save_dir = './sample_images_while_training/celeba_dcgan_no_bn_regular'
             utils.mkdir(save_dir + '/')
             utils.imwrite(utils.immerge(f_sample_opt, 10, 10), '%s/Epoch_(%d)_(%dof%d).jpg' % (save_dir, epoch, it_epoch, batch_epoch))
 
