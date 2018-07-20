@@ -112,6 +112,7 @@ try:
         summary_writer.add_summary(d_summary_opt, it)
 
         # train G
+        z_ipt = np.random.normal(size=[batch_size, z_dim])
         old_fake = sess.run(fake, feed_dict={z: z_ipt})
         sess.run([g_step], feed_dict={z: z_ipt, real: old_fake})
         g_summary_opt, _ = sess.run([g_summary, g_step], feed_dict={z: z_ipt, real: old_fake})
