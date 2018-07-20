@@ -7,7 +7,7 @@ import utils
 import traceback
 import numpy as np
 import tensorflow as tf
-import models_64x64 as models
+import models_64x64_no_BN as models
 
 
 """ param """
