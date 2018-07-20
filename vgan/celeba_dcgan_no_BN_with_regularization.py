@@ -82,7 +82,7 @@ it_cnt, update_cnt = utils.counter()
 # saver
 saver = tf.train.Saver(max_to_keep=5)
 # summary writer
-summary_writer = tf.summary.FileWriter('./summaries/celeba_dcgan', sess.graph)
+summary_writer = tf.summary.FileWriter('./summaries/celeba_dcgan_no_bn_regular', sess.graph)
 
 """ initialization """
 ckpt_dir = './checkpoints/celeba_dcgan'
