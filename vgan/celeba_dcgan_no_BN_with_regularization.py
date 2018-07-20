@@ -136,7 +136,7 @@ try:
             print('Model saved in file: % s' % save_path)
 
         # sample
-        if (it + 1) % 100 == 0:
+        if (it + 1) % 20 == 0:
             f_sample_opt = sess.run(f_sample, feed_dict={z: z_ipt_sample})
 
             save_dir = './sample_images_while_training/celeba_dcgan_no_bn_regular'
