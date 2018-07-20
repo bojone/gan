@@ -7,6 +7,7 @@ import re
 import scipy
 import numpy as np
 import tensorflow as tf
+import imageio
 
 from collections import OrderedDict
 
@@ -332,7 +333,7 @@ def imwrite(image, path):
     if image.ndim == 3 and image.shape[2] == 1:  # for gray image
         image = np.array(image, copy=True)
         image.shape = image.shape[0:2]
-    return scipy.misc.imsave(path, to_range(image, 0, 255, np.uint8))
+    return imageio.imwrite(path, to_range(image, 0, 255, np.uint8))
 
 
 def immerge(images, row, col):
