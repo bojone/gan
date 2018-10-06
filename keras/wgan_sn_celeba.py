@@ -75,7 +75,7 @@ for i in range(3):
                (5, 5),
                strides=(2, 2),
                padding='same',
-               kernel_constraint=maxnorm)(x)
+               kernel_constraint=spectral_normalization)(x)
     x = BatchNormalization(gamma_constraint=spectral_normalization)(x)
     x = LeakyReLU()(x)
 
