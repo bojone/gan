@@ -56,7 +56,7 @@ def spectral_norm(w, r=5):
 
 
 def spectral_normalization(w):
-    return x / spectral_norm(x)
+    return w / spectral_norm(w)
 
 
 # 判别器
