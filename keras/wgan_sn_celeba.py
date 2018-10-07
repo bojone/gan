@@ -1,4 +1,8 @@
 #! -*- coding: utf-8 -*-
+# 实现基于“谱归一化”的Keras代码，实现方式是添加kernel_constraint
+# 注意使用代码前还要修改Keras源码，修改
+# keras/engine/base_layer.py的Layer对象的add_weight方法
+# 修改方法见 https://kexue.fm/archives/6051#Keras%E5%AE%9E%E7%8E%B0
 
 import numpy as np
 from scipy import misc
