@@ -170,4 +170,4 @@ for i in range(total_iter):
         print 'iter: %s, d_loss: %s, g_loss: %s' % (i, d_loss, g_loss)
     if i % iters_per_sample == 0:
         sample('samples/test_%s.png' % i)
-    g_train_model.save_weights('./g_train_model.weights')
+        g_train_model.save_weights('./g_train_model.weights')
