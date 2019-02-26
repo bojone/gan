@@ -1,4 +1,5 @@
 #! -*- coding: utf-8 -*-
+#《Implicit Maximum Likelihood Estimation》例子
 
 import numpy as np
 import scipy as sp
