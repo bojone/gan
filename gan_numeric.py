@@ -1,3 +1,6 @@
+#! -*- coding: utf-8 -*-
+# https://kexue.fm/archives/6583
+
 # Vanilla GAN
 
 import numpy as np
